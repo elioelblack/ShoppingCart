@@ -25,8 +25,8 @@ public class OrderProductDetails {
     @GeneratedValue(strategy = javax.persistence.GenerationType.IDENTITY )
     @Column(name = "id")
     private Integer id;
-    @JsonDeserialize(using = OrderDeserialize.class)
     @JsonSerialize(using = OrderSerialize.class)
+    @JsonDeserialize(using = OrderDeserialize.class)
     @JoinColumn(name = "id_order")
     @ManyToOne
     private OrderProduct idOrder;
@@ -46,4 +46,18 @@ public class OrderProductDetails {
     private Date dateCreated;
     @Transient
     private ProductDTO productSpecification;
+
+    @PrePersist
+    public void operations(){
+        Double subtotal = (this.price * this.quantity);
+        Double impuesto = iva * subtotal;
+        this.total = subtotal + impuesto;
+    }
+
+    @PreUpdate
+    public void operationsRecalc(){
+        Double subtotal = (this.price * this.quantity);
+        Double impuesto = iva * subtotal;
+        this.total = subtotal + impuesto;
+    }
 }

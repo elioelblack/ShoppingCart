@@ -14,7 +14,7 @@ public interface ProductFeignClient {
     @GetMapping(value = "/products",headers = {HttpHeaders.USER_AGENT + "=Mozilla/5.0"})
     List<ProductDTO> getProducts();
 
-    @GetMapping(value = "/products/{id}")
+    @GetMapping(value = "/products/{id}",headers = {HttpHeaders.USER_AGENT + "=Mozilla/5.0"})
     ProductDTO getProductById(@PathVariable Integer id);
 
 }

@@ -22,9 +22,6 @@ public class ApiException {
         return message;
     }
 
-    public Throwable getThrowable() {
-        return throwable;
-    }
 
     public HttpStatus getHttpStatus() {
         return httpStatus;

@@ -1,7 +1,6 @@
 package com.cart.shopping.client;
 
-import com.cart.shopping.dto.Product;
-import feign.Headers;
+import com.cart.shopping.dto.ProductDTO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.HttpHeaders;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,9 +12,9 @@ import java.util.List;
 public interface ProductFeignClient {
 
     @GetMapping(value = "/products",headers = {HttpHeaders.USER_AGENT + "=Mozilla/5.0"})
-    List<Product> getProducts();
+    List<ProductDTO> getProducts();
 
     @GetMapping(value = "/products/{id}")
-    Product getProductById(@PathVariable Integer id);
+    ProductDTO getProductById(@PathVariable Integer id);
 
 }

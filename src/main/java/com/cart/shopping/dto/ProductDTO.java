@@ -3,13 +3,13 @@ package com.cart.shopping.dto;
 import lombok.Data;
 
 @Data
-public class Product {
+public class ProductDTO {
     private Integer id;
     private String title;
     private Double price;
     private String description;
     private String category;
     private String image;
-    private Rating rating;
+    private RatingDTO rating;
 
 }

@@ -49,7 +49,7 @@ public class OrderProductDetailsService {
                 return details.get();
             }
         }catch (Exception e){
-            throw new ApiRequestException(Constants.MESSAGE_ERROR_OCCURRED);
+            throw new ApiRequestException(e.getMessage());
         }
     }
 
@@ -63,7 +63,7 @@ public class OrderProductDetailsService {
                 return details.get();
             }
         }catch (Exception e){
-            throw new ApiRequestException(Constants.MESSAGE_ERROR_OCCURRED);
+            throw new ApiRequestException(e.getMessage());
         }
     }
 
@@ -98,7 +98,7 @@ public class OrderProductDetailsService {
             detail =  orderProductDetailsRepository.save(modelFromDatabase);
             return detail;
         }catch (Exception e){
-            throw new ApiRequestException(Constants.MESSAGE_ERROR_OCCURRED);
+            throw new ApiRequestException(e.getMessage());
         }
     }
 }

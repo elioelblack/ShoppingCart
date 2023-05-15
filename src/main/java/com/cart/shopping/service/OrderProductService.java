@@ -6,6 +6,7 @@ import com.cart.shopping.model.OrderProduct;
 import com.cart.shopping.repository.OrderProductRepository;
 import com.cart.shopping.utils.Constants;
 import com.cart.shopping.utils.Utils;
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.BeanUtils;
